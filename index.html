@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>Mouse Detector</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      font-size: 1.5em;
+      padding: 1em 2em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #333;
+      color: white;
+    }
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="startBot()">Start</button>
+
+  <script>
+    async function startBot() {
+      fetch('/start')
+        .then(res => alert('Programm gestartet'))
+        .catch(err => alert('Fehler beim Starten'));
+    }
+  </script>
+</body>
+</html>
